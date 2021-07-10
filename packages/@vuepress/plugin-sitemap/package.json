@@ -1,0 +1,46 @@
+{
+  "name": "@vuepress/plugin-sitemap",
+  "version": "2.0.0-beta.21",
+  "description": "VuePress plugin - sitemap",
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "plugin",
+    "sitemap"
+  ],
+  "homepage": "https://github.com/vuepress",
+  "bugs": {
+    "url": "https://github.com/vuepress/vuepress-next/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuepress/vuepress-next.git"
+  },
+  "license": "MIT",
+  "author": "Mr.Hope",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.d.ts\" lib"
+  },
+  "dependencies": {
+    "@types/fs-extra": "^9.0.12",
+    "@vuepress/client": "2.0.0-beta.21",
+    "@vuepress/core": "2.0.0-beta.21",
+    "@vuepress/plugin-git": "2.0.0-beta.21",
+    "@vuepress/shared": "2.0.0-beta.21",
+    "@vuepress/utils": "2.0.0-beta.21",
+    "chalk": "^4.1.1",
+    "fs-extra": "^10.0.0",
+    "sitemap": "^7.0.0"
+  },
+  "devDependencies": {},
+  "publishConfig": {
+    "access": "public"
+  }
+}
