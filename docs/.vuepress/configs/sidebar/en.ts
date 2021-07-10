@@ -91,6 +91,7 @@ export const en: SidebarConfig = {
             '/reference/plugin/pwa-popup.md',
             '/reference/plugin/register-components.md',
             '/reference/plugin/search.md',
+            '/reference/plugin/sitemap.md',
           ],
         },
         {
