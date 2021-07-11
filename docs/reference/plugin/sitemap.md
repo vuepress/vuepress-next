@@ -34,7 +34,7 @@ Whether exclude the page from sitemap
 - Type: `string`
 - Required: Yes
 
-The domain name where the current site is deployed, please at least pass it into the plugin option, or fill in `themeConfig.hostname`, otherwise the plugin will not work.
+The domain name where the current site is deployed, the plugin needs this option to work.
 
 ### urls
 
