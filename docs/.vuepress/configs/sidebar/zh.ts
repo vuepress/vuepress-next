@@ -94,6 +94,7 @@ export const zh: SidebarConfig = {
             '/zh/reference/plugin/pwa-popup.md',
             '/zh/reference/plugin/register-components.md',
             '/zh/reference/plugin/search.md',
+            '/zh/reference/plugin/sitemap.md',
           ],
         },
         {
