@@ -13,8 +13,13 @@ export interface CodePluginOptions {
 
   /**
    * Enable line numbers or not
+   *
+   * - `boolean` means enable code line numbers or not.
+   * - `number` means the threshold code lines enabling it
+   *
+   *   E.g.: `4` means only enable it when code block contains >=4 lines
    */
-  lineNumbers?: boolean
+  lineNumbers?: boolean | number
 
   /**
    * Wrap the `<pre>` tag with an extra `<div>` or not. Do not disable it unless you
@@ -56,9 +61,6 @@ export const codePlugin: PluginWithOptions<CodePluginOptions> = (
     if (highlightLines) {
       highlightLinesRanges = resolveHighlightLines(info)
     }
-
-    // resolve line-numbers mark from token info
-    const useLineNumbers = resolveLineNumbers(info) ?? lineNumbers
 
     // resolve v-pre mark from token info
     const useVPre = resolveVPre(info) ?? vPre
@@ -107,6 +109,13 @@ export const codePlugin: PluginWithOptions<CodePluginOptions> = (
 
       result = `${result}<div class="highlight-lines">${highlightLinesCode}</div>`
     }
+
+    // resolve line-numbers mark from token info
+    const useLineNumbers =
+      resolveLineNumbers(info) ??
+      (typeof lineNumbers === 'number'
+        ? lines.length >= lineNumbers
+        : lineNumbers)
 
     // generate line numbers
     if (useLineNumbers) {
